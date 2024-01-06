@@ -1,10 +1,83 @@
 .container{
-  display: flex;
-  flex-flow: column;
 }
 .user-info{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20rpx;
+  gap: 20rpx;
+}
+.info-item{
+  width: calc(50% - 20rpx);
+}
+.user-info button.edit-btn {
+  position: absolute;
+  right: 20rpx;
+  bottom: 0rpx;
+}
+.container button.edit-btn, .container button.reserve-btn{
+  width: 180rpx;
+  padding: 10rpx;
+  font-size: 26rpx;
+  margin: 0;
+}
+.block-item{
   width: 100%;
 }
 .list{
-  flex: 1;
+  width: 100%;
+  height: calc(100% - 330rpx);
+  margin-top: 40rpx;
+}
+.list .title{
+  position: relative;
+  font-size: 36rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+  border-top: 2rpx solid #ccc;
+  border-bottom: 2rpx solid #ccc;
+  padding: 20rpx 0;
+}
+.title .reserve-btn{
+  position: absolute;
+  right: 20rpx;
+  top: 16rpx;
+}
+
+.list-item{
+  display: flex;
+  justify-content: space-between;
+  gap: 20rpx;
+  width: 100%;
+  margin-bottom: 15rpx;
+}
+.list scroll-view{
+  height: calc(100% - 100rpx);
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.list-item .cols:nth-child(1){
+  width: 200rpx;
+}
+.list-item .cols:nth-child(2){
+ flex: 1;
+}
+.list-item .cols:nth-child(3){
+  width: 120rpx;
+}
+.status-0{
+  color: #f59c16;
+}
+.status-1{
+  color: #0abb10;
+}
+.status-2{
+  color: red;
+}
+.cols .status-btn{
+  width: 100rpx;
+  margin: 0;
+  font-size: 26rpx;
+  padding: 10rpx;
 }

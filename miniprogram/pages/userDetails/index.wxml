@@ -4,16 +4,24 @@
     <view class="info-item">性别：{{ userData.sex ? '男' : '女' }}</view>
     <view class="info-item">年龄：{{ userData.age }}</view>
     <view class="info-item">住院号：{{ userData.no }}</view>
-    <view class="info-item">电话号码：{{ userData.phone }}</view>
-    <view class="info-item">身份证号：{{ userData.idCard }}</view>
-    <view class="info-item">最后就诊时间：{{ userData.lastTime }}</view>
+    <view class="info-item block-item">电话号码：{{ userData.phone }}</view>
+    <view class="info-item block-item">身份证号：{{ userData.idCard }}</view>
+    <view class="info-item block-item">最后就诊时间：{{ userData.lastTime }}</view>
+    <button type="primary" class="edit-btn" bindtap="showEdit">修改信息</button>
   </view>
   <view class="list">
-    <view class="title">就诊记录</view>
+    <view class="title">就诊记录
+      <button type="primary" class="reserve-btn">新增预约</button>
+    </view>
     <scroll-view scroll-y="true">
-      <view class="list-item">
-        <view class="cols"></view>
+      <view class="list-item" wx:for="{{userData.list}}" wx:key="id">
+        <view class="cols">{{ item.time }}</view>
+        <view class="cols">{{ item.project }}</view>
+        <view class="cols">
+          <text class="status-{{item.status}}">{{ RESERVE_STATUS[item.status] }}</text>
+        </view>
       </view>
     </scroll-view>
   </view>
+  <edit-user show="{{ isShowEdit }}"></edit-user>
 </view>
