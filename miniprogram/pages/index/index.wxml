@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="title">欢迎来到随访笔记，
+    <text wx:if="{{userInfo.id}}">{{userInfo.name}}</text>
+    <text wx:else bindtap="login">请登录</text>
+  </view>
+  <view class="btn-group">
+    <button type="primary" class="btn" bindtap="goHistory">查询记录</button>
+    <button type="primary" class="btn" bindtap="goAddHistory">新增预约</button>
+  </view>
+</view>

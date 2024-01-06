@@ -1,0 +1,88 @@
+page {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+}
+
+.head {
+  width: 100%;
+  background: #F6F6F6;
+}
+
+.head .filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx 30rpx;
+  width: 100%;
+  border-bottom: 2rpx solid #ccc;
+  margin-bottom: 20rpx;
+}
+
+.filter input {
+  border-right: 2rpx solid #ccc;
+}
+
+.filter input,
+.filter picker {
+  width: 40%;
+  color: #777777;
+}
+
+.filter button.search-btn {
+  width: 100rpx;
+  font-size: 26rpx;
+  padding: 10rpx;
+  margin: 0;
+}
+
+.list-head,
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 20rpx;
+  padding: 0 10rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.cols {
+  width: 30%;
+}
+
+.list-head .cols:nth-child(2),
+.list-item .cols:nth-child(2) {
+  width: 15%;
+}
+
+.list-head .cols:nth-child(3),
+.list-item .cols:nth-child(3) {
+  width: 35%;
+}
+
+.list-head .cols:nth-child(4),
+.list-item .cols:nth-child(4) {
+  width: 20%;
+}
+
+.list-head .cols {
+  font-weight: bold;
+}
+
+.cols .view-btn {
+  width: 90%;
+  padding: 10rpx;
+  margin: 0;
+  font-size: 26rpx;
+}
+
+.result-list {
+  width: 100%;
+  height: calc(100% - 180rpx);
+}
+
+.result-list scroll-view {
+  height: 100%;
+}

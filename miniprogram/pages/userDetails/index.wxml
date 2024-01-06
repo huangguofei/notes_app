@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="user-info">
+    <view class="info-item">姓名：{{ userData.name }}</view>
+    <view class="info-item">性别：{{ userData.sex ? '男' : '女' }}</view>
+    <view class="info-item">年龄：{{ userData.age }}</view>
+    <view class="info-item">住院号：{{ userData.no }}</view>
+    <view class="info-item">电话号码：{{ userData.phone }}</view>
+    <view class="info-item">身份证号：{{ userData.idCard }}</view>
+    <view class="info-item">最后就诊时间：{{ userData.lastTime }}</view>
+  </view>
+  <view class="list">
+    <view class="title">就诊记录</view>
+    <scroll-view scroll-y="true">
+      <view class="list-item">
+        <view class="cols"></view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

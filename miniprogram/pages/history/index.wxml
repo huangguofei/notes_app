@@ -1,0 +1,30 @@
+<!--pages/history/index.wxml-->
+<view class="container">
+  <view class="head">
+    <view class="filter">
+      <input class="weui-input" auto-focus placeholder="请输入姓名" />
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <view class="picker"> {{date || '请选择日期'}} </view>
+      </picker>
+      <button type="primary" class="search-btn">搜索</button>
+    </view>
+    <view class="list-head">
+      <view class="cols">姓名</view>
+      <view class="cols">性别</view>
+      <view class="cols">日期</view>
+      <view class="cols">操作</view>
+    </view>
+  </view>
+  <view class="result-list">
+    <scroll-view 	scroll-y="true">
+      <view class="list-item" wx:for="{{list}}" wx:key="id">
+        <view class="cols">{{item.name}}</view>
+        <view class="cols">{{item.sex ? '男' : '女'}}</view>
+        <view class="cols">{{ item.time }}</view>
+        <view class="cols">
+          <button type="primary" class="view-btn" bindtap="viewList">查看</button>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

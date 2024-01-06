@@ -1,0 +1,17 @@
+/**index.wxss**/
+
+page {
+  padding-top: 54rpx;
+  background-color: #f6f6f6;
+  padding-bottom: 60rpx;
+}
+.title text{
+  color: red;
+}
+.btn-group{
+  width: 100%;
+}
+.btn-group button.btn{
+  width: 90%;
+  margin-top: 50rpx;
+}
