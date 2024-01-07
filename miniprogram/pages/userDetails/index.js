@@ -17,7 +17,7 @@ Page({
       list: [
         {
           id: '11',
-          time: '2022/11/10',
+          date: '2022/11/10',
           project: '血压检测',
           status: 1, 
         }
@@ -34,7 +34,7 @@ Page({
     for(let i = 0; i < 40; i++) {
       userData.list.push({
         id: 11 + i,
-        time: '2022/11/' + i,
+        date: '2022/11/' + i,
         project: '血压检测、血糖检测、新冠测试',
         status: i % 3, 
       })
@@ -47,5 +47,20 @@ Page({
     this.setData({
       isShowEdit: true
     })
-  }
+  },
+  viewDetails(e){
+    let { index } = e.currentTarget.dataset;
+    let item = index !== undefined ? this.data.userData.list[index] : ''
+    wx.navigateTo({
+      url: '/pages/add/index',
+      events: {
+        updateList: data => {
+          console.log('收到数据啦： ', data);
+        }
+      },
+      success: res => {
+        res.eventChannel.emit('initData', { item })
+      }
+    })
+  },
 })

@@ -11,11 +11,12 @@
   </view>
   <view class="list">
     <view class="title">就诊记录
-      <button type="primary" class="reserve-btn">新增预约</button>
+      <button type="primary" class="reserve-btn" bindtap="viewDetails">
+        新增预约</button>
     </view>
     <scroll-view scroll-y="true">
-      <view class="list-item" wx:for="{{userData.list}}" wx:key="id">
-        <view class="cols">{{ item.time }}</view>
+      <view class="list-item" wx:for="{{userData.list}}" wx:key="id" data-index="{{index}}" bindtap="viewDetails">
+        <view class="cols">{{ item.date }}</view>
         <view class="cols">{{ item.project }}</view>
         <view class="cols">
           <text class="status-{{item.status}}">{{ RESERVE_STATUS[item.status] }}</text>
@@ -23,5 +24,5 @@
       </view>
     </scroll-view>
   </view>
-  <edit-user show="{{ isShowEdit }}"></edit-user>
+  <edit-user show="{{ isShowEdit }}" data="{{userData}}"></edit-user>
 </view>

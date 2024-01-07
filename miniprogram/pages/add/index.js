@@ -5,62 +5,39 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    formData: {
+      date: '2022-11-11',
+      project: '血压监测、心脏检查'
+    },
+    isEdit: false,
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  onLoad() {
+    const eventChannel = this.getOpenerEventChannel();
+    eventChannel.on('initData', (data) => {
+      if (data?.item) {
+        this.setData({
+          formData: {...data.item}
+        })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  handle() {
+    let {
+      isEdit
+    } = this.data;
+    const eventChannel = this.getOpenerEventChannel();
+    if (!isEdit) {
+      this.setData({
+        isEdit: true
+      });
+      return
+    }
+    eventChannel.emit('updateList', {data: '小星'});
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  cancel() {
+    this.setData({
+      isEdit: false
+    });
   }
+
 })

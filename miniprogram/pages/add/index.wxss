@@ -1,1 +1,40 @@
-/* pages/add/index.wxss */
+.container{
+  padding-top: 40rpx;
+}
+.btn-group{
+  width: 100%;
+  margin-top: 30rpx;
+}
+.btn-group button.submit-btn, .btn-group button.cancel-btn{
+  width: 90%;
+  margin-bottom: 30rpx;
+}
+.info{
+  width: 100%;
+}
+.info-item{
+  display: flex;
+  padding: 20rpx;
+  border-bottom: 2rpx solid #ccc;
+}
+.info-item:last-child{
+  display: block;
+}
+.info-item textarea{
+  margin-top: 20rpx;
+  width: 100%;
+}
+.info-item picker{
+  color: #777777;
+}
+.info-item text{
+  width: 150rpx;
+  display: inline-block;
+}
+.info-group{
+  gap: 20rpx;
+}
+.info-cols{
+  display: flex;
+  width: 50%;
+}

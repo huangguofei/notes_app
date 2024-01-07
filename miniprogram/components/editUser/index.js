@@ -6,9 +6,17 @@ Component({
    */
   properties: {
     show: false,
-    position: 'top'
+    position: 'top',
+    data: {
+      type: Object,
+      value: {}
+    }
   },
-
+  observers: {
+    'data': val => {
+      
+    }
+  },
   /**
    * 组件的初始数据
    */

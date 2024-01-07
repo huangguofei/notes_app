@@ -1,2 +1,32 @@
-<!--pages/add/index.wxml-->
-<text>pages/add/index.wxml</text>
+<view class="container">
+  <view class="info">
+    <view class="info-item info-group">
+      <view class="info-cols">
+        <text>姓名：</text>
+        <view>小周</view>
+      </view>
+      <view class="info-cols">
+        <text>状态：</text>
+        <view>逾期</view>
+      </view>
+    </view>
+    <view class="info-item">
+      <text>预约时间：</text>
+      <picker mode="date" value="{{formData.date}}" start="2020-01-01"  bindchange="bindDateChange" disabled="{{!isEdit}}" >
+        <view class="picker"> {{formData.date || '请选择预约日期'}} </view>
+      </picker>
+    </view>
+    <view class="info-item">
+      <text>预约项目：</text>
+      <textarea value="{{formData.project}}" placeholder="请输入检查项目"
+      disabled="{{!isEdit}}" />
+    </view>
+  </view>
+  <view class="btn-group">
+    <button type="primary" class="submit-btn" bindtap="handle">
+      {{isEdit ? '确认' : '预约签到'}}
+    </button>
+    <button type="default" class="cancel-btn" bindtap="cancel" wx:if="{{isEdit}}">取消
+    </button>
+  </view>
+</view>
